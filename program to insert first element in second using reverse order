@@ -1,0 +1,20 @@
+#include <stdio.h>
+#define MAX_SIZE 100
+void copyReverse(int source[], int sourceSize, int destination[], int *destSize, int elementsToCopy) {
+    for (int i = elementsToCopy - 1; i >= 0; i--) destination[(*destSize)++] = source[i];
+}
+int main() {
+    int first[MAX_SIZE], second[MAX_SIZE], sizeFirst = 0, sizeSecond = 0, elementsToCopy;
+    printf("Enter size of first array: ");
+    scanf("%d", &sizeFirst);
+
+    printf("Enter elements of first array: ");
+    for (int i = 0; i < sizeFirst; scanf("%d", &first[i++]));
+
+    printf("Enter number of elements to copy in reverse: ");
+    scanf("%d", &elementsToCopy);
+    copyReverse(first, sizeFirst, second, &sizeSecond, elementsToCopy);
+    printf("Second Array in reverse order: ");
+    for (int i = 0; i < sizeSecond; printf("%d ", second[i++]));
+    return 0;
+}
